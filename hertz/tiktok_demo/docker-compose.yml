@@ -1,0 +1,74 @@
+services:
+  # docker compose up -d mysql
+  # docker compose down -v mysql
+  mysql:
+    image: 'mysql:latest'
+    container_name: mysql
+    hostname: mysql
+    volumes:
+     - ./pkg/configs/sql:/docker-entrypoint-initdb.d # rename to sql
+     - ../../.volumes/mysql/var/lib/mysql:/var/lib/mysql
+    ports:
+      - "3306:3306"
+    environment:
+      - MYSQL_DATABASE=db0
+      - MYSQL_USER=user
+      - MYSQL_PASSWORD=pass
+      - MYSQL_RANDOM_ROOT_PASSWORD="yes"
+      - TZ=Asia/Shanghai
+    privileged: true
+    restart: on-failure
+    profiles:
+      - dev
+      - release
+
+  # docker compose up -d minio
+  # docker compose down -v minio
+  minio:
+    image: minio/minio
+    container_name: minio
+    hostname: minio
+    ports:
+      - "9000:9000"
+      - "9001:9001"
+    environment:
+      MINIO_ACCESS_KEY: user # username
+      MINIO_SECRET_KEY: password # password
+    volumes:
+      - ../../.volumes/minio/data:/data
+      - ../../.volumes/minio/root/.minio:/root/.minio
+    command: server --console-address ':9001' /data
+    privileged: true
+    restart: on-failure
+    profiles:
+      - dev
+      - release
+
+  # docker compose up -d redis
+  # docker compose down -v redis
+  redis:
+    image: redis:7
+    container_name: redis
+    hostname: redis
+    ports:
+      - "6379:6379"
+    volumes:
+      - ../../.volumes/redis/usr/local/etc/redis/redis.conf:/usr/local/etc/redis/redis.conf
+      - ../../.volumes/redis/data:/data
+    command: redis-server /usr/local/etc/redis/redis.conf
+    restart: on-failure
+    profiles:
+      - dev
+      - release
+
+  # tiktok:
+  #   image: tiktok:latest
+  #   container_name: tiktok
+  #   depends_on:
+  #     - mysql
+  #     - redis
+  #     - minio
+  #   restart: on-failure
+  #   network_mode: host
+  #   profiles:
+  #     - release
