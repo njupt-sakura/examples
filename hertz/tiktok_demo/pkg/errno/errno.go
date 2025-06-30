@@ -51,6 +51,8 @@ const (
 
 	ErrMsg_VideoNotExist   = "Video is not exist"
 	ErrMsg_CommentNotExist = "Comment is not exist"
+
+	ErrMsg_NameOrPwdNotVerified = "Username or password not verified"
 )
 
 type ErrNo struct {
@@ -58,7 +60,7 @@ type ErrNo struct {
 	ErrMsg  string
 }
 
-func (e *ErrNo) Error() string {
+func (e ErrNo) Error() string {
 	return fmt.Sprintf("ErrCode=%d, ErrMsg=%s", e.ErrCode, e.ErrMsg)
 }
 
@@ -95,6 +97,8 @@ var (
 
 	Err_VideoNotExist   = NewErrNo(ErrCode_VideoNotExist, ErrMsg_VideoNotExist)
 	Err_CommentNotExist = NewErrNo(ErrCode_CommentNotExist, ErrMsg_CommentNotExist)
+
+	Err_NameOrPwdNotVerified = NewErrNo(ErrCode_AuthorizationFailed, ErrMsg_NameOrPwdNotVerified)
 )
 
 func ConvertErr(err error) ErrNo {
