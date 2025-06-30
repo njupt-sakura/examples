@@ -34,9 +34,9 @@ create table follows (
   key idx_user_id (user_id) using btree
 ) engine = InnoDB auto_increment = 1000 default charset = utf8 comment = '关注表';
 
-drop table if exists likes;
+drop table if exists favorites;
 
-create table likes (
+create table favorites (
   id bigint not null auto_increment comment '自增主键',
   user_id bigint not null comment '点赞的用户 ID',
   video_id bigint not null comment '点赞的视频 ID',

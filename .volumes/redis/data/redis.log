@@ -1,0 +1,29 @@
+1:C 29 Jun 2025 13:47:59.684 * oO0OoO0OoO0Oo Redis is starting oO0OoO0OoO0Oo
+1:C 29 Jun 2025 13:47:59.685 * Redis version=7.4.4, bits=64, commit=00000000, modified=0, pid=1, just started
+1:C 29 Jun 2025 13:47:59.685 * Configuration loaded
+1:M 29 Jun 2025 13:47:59.686 * monotonic clock: POSIX clock_gettime
+1:M 29 Jun 2025 13:47:59.686 * Running mode=standalone, port=6379.
+1:M 29 Jun 2025 13:47:59.687 * Server initialized
+1:M 29 Jun 2025 13:47:59.688 * Loading RDB produced by version 7.4.4
+1:M 29 Jun 2025 13:47:59.688 * RDB age 353 seconds
+1:M 29 Jun 2025 13:47:59.688 * RDB memory usage when created 0.93 Mb
+1:M 29 Jun 2025 13:47:59.689 * Done loading RDB, keys loaded: 0, keys expired: 0.
+1:M 29 Jun 2025 13:47:59.689 * DB loaded from disk: 0.002 seconds
+1:M 29 Jun 2025 13:47:59.689 * Ready to accept connections tcp
+1:signal-handler (1751204900) Received SIGTERM scheduling shutdown...
+1:M 29 Jun 2025 13:48:20.993 * User requested shutdown...
+1:M 29 Jun 2025 13:48:20.995 * Saving the final RDB snapshot before exiting.
+1:M 29 Jun 2025 13:48:20.998 * DB saved on disk
+1:M 29 Jun 2025 13:48:20.998 # Redis is now ready to exit, bye bye...
+1:C 29 Jun 2025 13:48:23.579 * oO0OoO0OoO0Oo Redis is starting oO0OoO0OoO0Oo
+1:C 29 Jun 2025 13:48:23.579 * Redis version=7.4.4, bits=64, commit=00000000, modified=0, pid=1, just started
+1:C 29 Jun 2025 13:48:23.580 * Configuration loaded
+1:M 29 Jun 2025 13:48:23.580 * monotonic clock: POSIX clock_gettime
+1:M 29 Jun 2025 13:48:23.581 * Running mode=standalone, port=6379.
+1:M 29 Jun 2025 13:48:23.581 * Server initialized
+1:M 29 Jun 2025 13:48:23.582 * Loading RDB produced by version 7.4.4
+1:M 29 Jun 2025 13:48:23.583 * RDB age 3 seconds
+1:M 29 Jun 2025 13:48:23.583 * RDB memory usage when created 0.92 Mb
+1:M 29 Jun 2025 13:48:23.583 * Done loading RDB, keys loaded: 0, keys expired: 0.
+1:M 29 Jun 2025 13:48:23.584 * DB loaded from disk: 0.002 seconds
+1:M 29 Jun 2025 13:48:23.584 * Ready to accept connections tcp
